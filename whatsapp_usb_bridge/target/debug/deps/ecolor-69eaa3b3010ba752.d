@@ -1,0 +1,10 @@
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\ecolor-69eaa3b3010ba752.d: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\color32.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva_gamma.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\rgba.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hex_color_runtime.rs
+
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\libecolor-69eaa3b3010ba752.rmeta: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\color32.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva_gamma.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\rgba.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hex_color_runtime.rs
+
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\lib.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\color32.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva_gamma.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hsva.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\rgba.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ecolor-0.28.1\src\hex_color_runtime.rs:

@@ -1,6 +1,7 @@
 use super::models::WhatsAppMessage;
 use regex::Regex;
 
+#[allow(dead_code)]
 pub struct WhatsAppParser {
     re_title: Regex,
     re_text: Regex,
@@ -8,6 +9,7 @@ pub struct WhatsAppParser {
     re_key: Regex,
 }
 
+#[allow(dead_code)]
 impl WhatsAppParser {
     pub fn new() -> Self {
         Self {
@@ -23,7 +25,6 @@ impl WhatsAppParser {
         let records = dumpsys_output.split("NotificationRecord(");
 
         for record in records {
-            // Verificar si pertenece a com.whatsapp o com.whatsapp.w4b (WhatsApp Business)
             let is_whatsapp = record.contains("pkg=com.whatsapp") || record.contains("com.whatsapp");
             if !is_whatsapp {
                 continue;
@@ -65,7 +66,6 @@ impl WhatsAppParser {
             }
 
             if let (Some(sender), Some(content)) = (title, text) {
-                // Filtrar notificaciones del sistema de WhatsApp como copias de seguridad o servicios en segundo plano
                 if sender == "WhatsApp Web" || content.contains("mensajes nuevos") && sender == "WhatsApp" {
                     continue;
                 }

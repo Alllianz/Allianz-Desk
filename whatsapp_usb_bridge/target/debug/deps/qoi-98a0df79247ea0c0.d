@@ -1,0 +1,13 @@
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\qoi-98a0df79247ea0c0.d: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\decode.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\encode.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\error.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\header.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\pixel.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\types.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\utils.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\consts.rs
+
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\libqoi-98a0df79247ea0c0.rmeta: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\decode.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\encode.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\error.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\header.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\pixel.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\types.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\utils.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\consts.rs
+
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\lib.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\decode.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\encode.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\error.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\header.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\pixel.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\types.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\utils.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\qoi-0.4.1\src\consts.rs:

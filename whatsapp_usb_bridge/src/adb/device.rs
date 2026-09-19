@@ -5,6 +5,7 @@ use std::process::Command;
 #[derive(Debug, Clone)]
 pub struct DeviceInfo {
     pub serial: String,
+    #[allow(dead_code)]
     pub state: String,
     pub model: Option<String>,
 }
@@ -138,6 +139,27 @@ impl AdbClient {
         Ok(stdout)
     }
 
+    /// Captura un fotograma de la pantalla del dispositivo en formato PNG binario
+    pub fn capture_screen_bytes(&self) -> Result<Vec<u8>> {
+        let mut cmd = Command::new(&self.adb_path);
+        
+        if let Some(ref serial) = self.selected_device {
+            cmd.arg("-s").arg(serial);
+        }
+
+        cmd.arg("exec-out").arg("screencap").arg("-p");
+
+        let output = cmd.output().with_context(|| "Error al capturar pantalla vía adb exec-out screencap")?;
+
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr);
+            return Err(anyhow!("Fallo al capturar pantalla: {}", stderr));
+        }
+
+        Ok(output.stdout)
+    }
+
+    #[allow(dead_code)]
     pub fn get_notifications_raw(&self) -> Result<String> {
         self.execute_shell("dumpsys notification --noredact")
     }
@@ -154,18 +176,106 @@ impl AdbClient {
     }
 
     pub fn input_text(&self, text: &str) -> Result<()> {
-        // Escapar caracteres para comando de shell adb
         let escaped = text
             .replace('\\', "\\\\")
             .replace('"', "\\\"")
+            .replace('\'', "\\'")
             .replace(' ', "%s")
             .replace('&', "\\&")
             .replace('<', "\\<")
             .replace('>', "\\>")
             .replace('(', "\\(")
-            .replace(')', "\\)");
+            .replace(')', "\\)")
+            .replace(';', "\\;")
+            .replace('|', "\\|")
+            .replace('$', "\\$");
 
         self.execute_shell(&format!("input text \"{}\"", escaped))?;
+        Ok(())
+    }
+
+    /// Configura el dispositivo para operar de forma autónoma sin apagarse ni bloquearse mientras esté conectado por USB
+    pub fn setup_always_on(&self) -> Result<()> {
+        // 1. Despertar pantalla si está apagada
+        let _ = self.execute_shell("input keyevent 224"); // KEYCODE_WAKEUP
+        // 2. Descartar bloqueo de pantalla deslizable
+        let _ = self.execute_shell("wm dismiss-keyguard");
+        // 3. Mantener pantalla encendida siempre conectado a USB
+        let _ = self.execute_shell("svc power stayon true");
+        let _ = self.execute_shell("settings put global stay_on_while_plugged_in 3");
+        let _ = self.execute_shell("settings put system screen_off_timeout 2147483647");
+        Ok(())
+    }
+
+    /// Despierta el dispositivo, quita la pantalla de bloqueo y configura para no apagarse mientras esté por USB
+    pub fn ensure_device_awake(&self) -> Result<()> {
+        let _ = self.execute_shell("input keyevent 224"); // KEYCODE_WAKEUP
+        let _ = self.execute_shell("wm dismiss-keyguard");
+        let _ = self.execute_shell("svc power stayon true");
+        Ok(())
+    }
+
+    /// Inyecta texto instantáneamente mediante el portapapeles de Android y la acción PEGAR (admite emojis y caracteres especiales)
+    #[allow(dead_code)]
+    pub fn set_clipboard_and_paste(&self, text: &str) -> Result<()> {
+        // Escapar comillas dobles y barras para cmd clipboard
+        let escaped = text.replace('\\', "\\\\").replace('"', "\\\"");
+        let cmd = format!("cmd clipboard set text \"{}\"", escaped);
+        
+        let res = self.execute_shell(&cmd);
+        let clipboard_ok = match res {
+            Ok(ref out) if !out.contains("Error") && !out.contains("Exception") => true,
+            _ => false,
+        };
+
+        if clipboard_ok {
+            // Pegar contenido del portapapeles
+            let _ = self.send_key_event(279); // KEYCODE_PASTE
+        } else {
+            // Fallback a escritura estándar por ADB
+            self.input_text(text)?;
+        }
+
+        Ok(())
+    }
+
+    /// Oculta el teclado virtual (Soft Keyboard) para que no tape los botones ni interfiera con el texto
+    pub fn dismiss_keyboard(&self) -> Result<()> {
+        let _ = self.execute_shell("input keyevent 111"); // KEYCODE_ESCAPE
+        Ok(())
+    }
+
+    /// Obtiene la resolución de la pantalla del dispositivo (ancho, alto)
+    pub fn get_screen_size(&self) -> Result<(i32, i32)> {
+        let output = self.execute_shell("wm size")?;
+        // Formato esperado: "Physical size: 1080x2400" o "Override size: 1080x2400"
+        for line in output.lines() {
+            if let Some(pos) = line.find("size:") {
+                let size_str = line[pos + 5..].trim();
+                let dims: Vec<&str> = size_str.split('x').collect();
+                if dims.len() == 2 {
+                    if let (Ok(w), Ok(h)) = (dims[0].trim().parse::<i32>(), dims[1].trim().parse::<i32>()) {
+                        return Ok((w, h));
+                    }
+                }
+            }
+        }
+        // Resolución por defecto habitual si no se puede determinar
+        Ok((1080, 2400))
+    }
+
+    /// Vuelca la jerarquía visual de la pantalla actual en formato XML usando uiautomator
+    pub fn dump_ui_hierarchy(&self) -> Result<String> {
+        let temp_xml = "/data/local/tmp/window_dump.xml";
+        let _ = self.execute_shell(&format!("uiautomator dump {}", temp_xml));
+        let xml_content = self.execute_shell(&format!("cat {}", temp_xml))?;
+        Ok(xml_content)
+    }
+
+    /// Simula un desplazamiento (swipe) en pantalla
+    #[allow(dead_code)]
+    pub fn swipe(&self, x1: i32, y1: i32, x2: i32, y2: i32, duration_ms: u32) -> Result<()> {
+        self.execute_shell(&format!("input swipe {} {} {} {} {}", x1, y1, x2, y2, duration_ms))?;
         Ok(())
     }
 }

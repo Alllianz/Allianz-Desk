@@ -1,0 +1,10 @@
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\crc32fast-732ca0710ef4e16d.d: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\baseline.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\combine.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\mod.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\table.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\pclmulqdq.rs
+
+C:\Users\Allianz\Downloads\Antigravity\Allianz-Desk\whatsapp_usb_bridge\target\debug\deps\libcrc32fast-732ca0710ef4e16d.rmeta: C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\lib.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\baseline.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\combine.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\mod.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\table.rs C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\pclmulqdq.rs
+
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\lib.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\baseline.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\combine.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\mod.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\table.rs:
+C:\Users\Allianz\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\crc32fast-1.5.2\src\specialized\pclmulqdq.rs:
